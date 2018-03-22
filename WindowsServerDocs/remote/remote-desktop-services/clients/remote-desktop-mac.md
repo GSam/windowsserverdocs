@@ -1,4 +1,4 @@
-9---
+---
 title: Get started with Remote Desktop on Mac
 description: Learn how to set up the Remote Desktop client for Mac
 ms.custom: na
@@ -113,7 +113,7 @@ To create a new user account:
 3. Enter the following information:
    - **User Name** - The name of the user to save for use with a remote connection. You can enter the user name in any of the following formats: user_name, domain\user_name, or user_name@domain.com.
    - **Password** - The password for the user you specified. Every user account that you want to save to use for remote connections needs to have a password associated with it.
-   -**Friendly Name** - If you are using the same user account with different passwords set a friendly name to disticnt those user accounts.
+   - **Friendly Name** - If you are using the same user account with different passwords, set a friendly name to distinguish those user accounts.
 4. Tap **Save**, and then tap **Settings**.
 
 ## Customize your display resolution
@@ -161,4 +161,3 @@ To learn more about this feature, check out [http://aka.ms/paa-sample](http://ak
 > [!TIP]
 > Questions and comments are always welcome. However, please do NOT post a request for troubleshooting help by using the comment feature at the end of this article. Instead, go to the [Remote Desktop client forum](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) and start a new thread. Have a feature suggestion? Tell us in the [client user voice forum](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
 
-Not finding content you need? Windows 10 users, tell us what you want on [Feedback Hub](feedback-hub://?referrer=techDocsUcPage&tabid=2&contextid=898&newFeedback=true&topic=remote-desktop-mac.md). 

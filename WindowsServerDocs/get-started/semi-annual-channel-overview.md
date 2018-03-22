@@ -19,15 +19,16 @@ The Windows Server release model is offering a new option in order to align with
 
 **There will be two primary release channels available to Windows Server customers, the Long-Term Servicing Channel, and the new Semi-Annual Channel.** You can keep servers on the Long-Term Servicing Channel (LTSC), move them to the new Semi-Annual Channel, or have some servers on either track, depending on what works best for your needs.
 
-Check out this Microsoft Mechanics video for an overview of the updated release model, particularly the Semi-Annual Channel.
+Click the following Microsoft Mechanics video for an overview of the updated release model, particularly the Semi-Annual Channel.
 
-> [!VIDEO https://www.youtube.com/embed/qSAsiM01GOU]
+
+[![YouTube video of Michael Niehouse explaining how the Semi-Annual Channel works](media/SAC_vid_crop.jpg)](https://youtu.be/qSAsiM01GOU) 
 
 ## Long-Term Servicing Channel (LTSC)
 This is the release model you’re already familiar with (formerly called the “Long-Term Servicing *Branch*”) where a new major version of Windows Server is released every 2-3 years. Users are entitled to 5 years of mainstream support and 5 years of extended support. This channel is appropriate for systems that require a longer servicing option and functional stability. Deployments of Windows Server 2016 and earlier versions of Windows Server will not be affected by the new Semi-Annual Channel releases. The Long-Term Servicing Channel will continue to receive security and non-security updates, but it will not receive the new features and functionality.
 
 > [!Note]  
-> **The current LTSC product is Windows Server 2016**. If you want to stay in this channel, you should install (or continue using) Windows Server 2016, which can be installed in Server Core mode or Server with Desktop Experience Mode. See [Get Started with Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basic) for details. 
+> **The current LTSC product is Windows Server 2016**. If you want to stay in this channel, you should install (or continue using) Windows Server 2016, which can be installed in Server Core installation option or Server with Desktop Experience installation option. See [Get Started with Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basic) for details. 
 
 
 
@@ -39,7 +40,7 @@ Most of the features introduced in the Semi-Annual Channel will be rolled up int
 The Semi-Annual Channel will be available to volume-licensed customers with [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx), as well as via the Azure Marketplace or other cloud/hosting service providers and loyalty programs such as Visual Studio Subscriptions.
 
 > [!Note]  
-> **The first Semi-Annual Channel release is Windows Server, version 1709**. If you want to put servers in this channel, you should install Windows Server, version 1709, which can be installed in Server Core mode or as Nano Server run in a container. See [Introducing Windows Server, version 1709](get-started-with-1709.md) to learn how to obtain and activate Windows Server, version 1709. In-place upgrades from Windows Server 2016 to Windows Server, version 1709 are not supported because they are in **different release channels**. Windows Server, version 1709 is not an update to Windows Server 2016--it is the first Windows Server release in this new Semi-Annual Channel.
+> **The first Semi-Annual Channel release is Windows Server, version 1709**. If you want to put servers in this channel, you should install Windows Server, version 1709, which can be installed in Server Core mode or as Nano Server run in a container. See [Introducing Windows Server, version 1709](get-started-with-1709.md) to learn how to obtain and activate Windows Server, version 1709. In-place upgrades from Windows Server 2016 to Windows Server, version 1709 are not supported because they are in **different release channels**. Windows Server, version 1709 is not an update to Windows Server 2016 – it is the first Windows Server release in this new Semi-Annual Channel.
 
 
 
@@ -92,7 +93,7 @@ Pre-release builds of Windows Server will be available for download via the Wind
 
  
 # Related topics
-[Changes to Nano Server in the next release of Windows Server](nano-in-semi-annual-channel.md)
+[Changes to Nano Server in Windows Server Semi-Annual Channel](nano-in-semi-annual-channel.md)
 
 [Windows Server support lifecycle](https://support.microsoft.com/en-us/lifecycle)
 

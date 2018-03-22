@@ -7,7 +7,7 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 12/05/2017
+ms.date: 3/13/2017
 description: New and updated topics in the on-premises storage documentation for Windows Server for IT Pros.
 ---
 # Change history for storage topics in Windows Server
@@ -18,11 +18,39 @@ This topic lists new and updated topics in the [Storage](storage.md) documentati
 
 > If you're looking for update history for Windows Server, see [Windows 10 and Windows Server 2016 update history](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
+## March 2018
+
+|New or changed topic|Description|
+|---|---|
+|[Deploying Roaming User Profiles](folder-redirection/deploy-roaming-user-profiles.md)|Moved from Previous Versions library and updated.|
+|[Understanding Quorum in Storage Spaces Direct](storage-spaces/understand-quorum.md)| New topic.|
+|[Deploying Storage Spaces Direct](storage-spaces/hyper-converged-solution-using-storage-spaces-direct.md)| Heavily revised to include both converged and hyper-converged scenarios.|
+|[Storage Replica frequently asked questions](storage-replica/storage-replica-frequently-asked-questions.md)|Added [Is CSV required to replicate in a stretch cluster or between clusters?](storage-replica/storage-replica-frequently-asked-questions.md#FAQ7.5).|
+
+## February 2018
+
+|New or changed topic|Description|
+|---|---|
+|[Storage Spaces health and operational states](storage-spaces/storage-spaces-states.md)| New topic.|
+
+## January 2018
+
+|New or changed topic|Description|
+|---|---|
+|[Drive symmetry considerations in Storage Spaces Direct](storage-spaces/drive-symmetry-considerations.md)| New topic.|
+|[Using Storage Replica with Project Honolulu](storage-replica/storage-replica-ui.md)|New topic.|
+
 ## December 2017
 
 |New or changed topic|Description|
 |---|---|
+|[Change a drive letter](disk-management/change-a-drive-letter.md)|New topic.|
+|[Troubleshooting Disk Management](disk-management/troubleshooting-disk-management.md)|Rewrote the [A disk's status is Not Initialized or the disk is missing entirely](disk-management/troubleshooting-disk-management.md#disk-not-initialized) section to add extensive troubleshooting steps, based on customer requests.|
+|[Initialize new disks](disk-management/initialize-new-disks.md)|Rewrote to attempt to make it easier to understand and address customer questions.|
+|[Planning volumes in Storage Spaces Direct](storage-spaces/plan-volumes.md)|Added a table summarizing the resiliency types available on four-node and larger clusters.|
 |[ReFS overview](refs/refs-overview.md)|Clarified recommended workloads for mirror-accelerated parity and corrected the supported file and volume sizes for ReFS and NTFS.|
+|[Mirror-accelerated parity](refs/mirror-accelerated-parity.md)|Clarified recommendation to place write-heavy files in separate directories.|
+|[Storage Replica known issues](storage-replica/storage-replica-known-issues.md)|Added new information.|
 
 ## November 2017
 

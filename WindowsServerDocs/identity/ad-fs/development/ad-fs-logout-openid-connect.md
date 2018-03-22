@@ -56,7 +56,7 @@ The following additional values will be available in the discovery doc to indica
 
 - frontchannel_logout_supported: value will be 'true'
 - frontchannel_logout_session_supported: value will be 'true'.
-- end_session_endpoint: this is the oauth logout uri tht the client can use to initiate logout on the server.
+- end_session_endpoint: this is the OAuth logout URI that the client can use to initiate logout on the server.
 
 
 ## AD FS server configuration
@@ -106,4 +106,5 @@ The `LogoutUri` is the url used by AF FS to "log off" the user. For implementing
 **A:** Yes. It is the responsibility of the client application to drop all authenticated artifacts after a sign-out request was received at the registered `LogoutUri`.
 
 
-
+## Next Steps
+[AD FS Development](../../ad-fs/AD-FS-Development.md)  

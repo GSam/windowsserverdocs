@@ -5,7 +5,7 @@ description: Frequently asked questions for AD FS 2016
 author: jenfieldmsft
 ms.author:  billmath
 manager: femila
-ms.date: 11/16/2017
+ms.date: 03/06/2018
 ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
@@ -43,9 +43,6 @@ HTTP/2 support was added in Windows Server 2016, but HTTP/2 can't be used for cl
 ### Is using Windows 2016 WAP Servers to publish the AD FS farm to the internet without upgrading the back-end AD FS farm supported?
 Yes, this configuration is supported, however no new AD FS 2016 features would be supported in this configuration.  This configuration is meant to be temporary during the migration phase from AD FS 2012 R2 to AD FS 2016 and should not be deployed for long periods of time.
 
-### Are third party proxies supported with AD FS?
-Yes, third party proxies can be placed in front of the Web Application Proxy, but any third party proxy must support the [MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx) protocol to be used in place of the Web Application Proxy.
-
 ## Design
 
 ### What third party multi-factor authentication providers are available for AD FS? 
@@ -61,6 +58,12 @@ Below is a list of third party providers we are aware of.  There may always be p
 
 ### Are third party proxies supported with AD FS?
 Yes, third party proxies can be placed in front of the Web Application Proxy, but any third party proxy must support the [MS-ADFSPIP protocol](https://msdn.microsoft.com/library/dn392811.aspx) to be used in place of the Web Application Proxy.
+
+### What third party proxies are available for AD FS that support MS-ADFSPIP?
+
+Below is a list of third party providers we are aware of.  There may always be providers available that we do not know about and we will update the list as we learn about them.
+
+- [F5 Access Policy Manager](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-third-party-integration-13-1-0/12.html#guid-1ee8fbb3-1b33-4982-8bb3-05ae6868d9ee)
 
 ### Where is the capacity planning sizing spreadsheet for AD FS 2016?
 The AD FS 2016 version of the spreadsheet can be downloaded [here](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx).
@@ -124,6 +127,7 @@ The default lifetimes of the various cookies and tokens are listed below (as wel
 
 - SSO cookies: 8 hours by default, governed by SSOLifetimeMins.  When Keep Me Signed in (KMSI) is enabled, default is 24 hours and configurable via KMSILifetimeMins.
 
+
 - Refresh token: 8 hours by default. 24 hours with KMSI enabled
 
 - access_token: 1 hour by default, based on the relying party
@@ -134,7 +138,7 @@ The default lifetimes of the various cookies and tokens are listed below (as wel
 
 HTTP Strict Transport Security (HSTS) is a web security policy mechanism which helps mitigate protocol downgrade attacks and cookie hijacking for services that have both HTTP and HTTPS endpoints. It allows web servers to declare that web browsers (or other complying user agents) should only interact with it using HTTPS and never via the HTTP protocol.
 
-All AD FS endpoints for web authentication traffic are opened exclusively over HTTPS.  As a result, AD FS effectively mitigates the threats that HTTP String Transport Security policy mechanism provides (by design there is no downgrade to HTTP since there are no listeners in HTTP). In addition, AD FS prevents the cookies from being sent to another server with HTTP protocol endpoints by marking all cookies with the secure flag.
+All AD FS endpoints for web authentication traffic are opened exclusively over HTTPS.  As a result, AD FS effectively mitigates the threats that HTTP Strict Transport Security policy mechanism provides (by design there is no downgrade to HTTP since there are no listeners in HTTP). In addition, AD FS prevents the cookies from being sent to another server with HTTP protocol endpoints by marking all cookies with the secure flag.
 
 Therefore, implementing HSTS on an AD FS server is not required because it can never be downgraded.  For compliance purposes, AD FS servers meet these requirements because they can never use HTTP and all cookies are marked secure.
 
@@ -177,3 +181,9 @@ Run certlm.msc on the Windows servers and import the *.PFX into the Computer’s
 
 >[!NOTE]
 > The certificate store of Network Load Balancers should also be updated to include the entire certificate chain if present
+
+### Does AD FS support HEAD requests?
+AD FS does not support HEAD requests.  Applications should not be using HEAD requests against AD FS endpoints.  This may cause HTTP error responses that are unexpected and/or delayed.  Additionally, you may see unexpected error events in the AD FS event log.
+
+### Why am I not seeing a refresh token when I am logging in with a remote IdP?
+A refresh token is not issued if the token issued by IdP has a validty of less than 1 hour. To ensure a refresh token is issued, increase the validity of token issued by the IdP to more than 1 hour.

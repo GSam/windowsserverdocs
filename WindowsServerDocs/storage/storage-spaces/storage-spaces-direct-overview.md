@@ -6,7 +6,7 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 11/8/2017
+ms.date: 3/6/2018
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: An overview of Storage Spaces Direct, a feature of Windows Server Enterprise Edition that enables you to cluster servers with internal storage into a software-defined storage solution.
 ms.localizationpriority: medium
@@ -21,20 +21,17 @@ Storage Spaces Direct is included in Windows Server 2016 Datacenter and [Windows
 
 <table>
     <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:125px">
-        <img src="media/Storage-Spaces-Direct-in-Windows-Server-2016/understand.png" width="125" alt="">        </td>
-        <td style="padding: 10px; border: 0;">
+        <td style="padding: 5px; border: 0;">
             <strong><a href="understand-storage-spaces-direct.md">Understand</a></strong>
             <ul>
 			  <li>Overview (you are here)</li>
 			  <li><a href="understand-the-cache.md">Understand the cache</a></li>
 			  <li><a href="storage-spaces-fault-tolerance.md">Fault tolerance and storage efficiency</a></li>
+              <li><a href="drive-symmetry-considerations.md">Drive symmetry considerations</a></li>
+              <li><a href="understand-quorum.md">Understanding cluster and pool quorum</a></li>
 		  	</ul>
         </td>
-        <td style="padding: 10px; border: 0; width:125px">
-        <img src="media/Storage-Spaces-Direct-in-Windows-Server-2016/plan.png" width="125" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
+        <td style="padding: 5px; border: 0;">
             <strong><a href="plan-storage-spaces-direct.md">Plan</a></strong>
             <ul>
 			  <li><a href="storage-spaces-direct-hardware-requirements.md">Hardware requirements</a></li>
@@ -45,20 +42,14 @@ Storage Spaces Direct is included in Windows Server 2016 Datacenter and [Windows
         </td>
     </tr>
     <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:125px">
-            <img src="media/Storage-Spaces-Direct-in-Windows-Server-2016/deploy.png" width="125" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
+        <td style="padding: 5px; border: 0;">
             <strong><a href="deploy-storage-spaces-direct.md">Deploy</a></strong>
             <ul>
-			  <li><a href="hyper-converged-solution-using-storage-spaces-direct.md">Hyper-converged solution</a></li>
-			  <li><a href="create-volumes.md">Create volumes</a></li>
+			  <li><a href="hyper-converged-solution-using-storage-spaces-direct.md">Deploy Storage Spaces Direct</a></li>
+			  <li><a href="create-volumes.md">Create volumes</a><br><br><br><br></li>
 		    </ul>
         </td>        
-        <td style="padding: 10px; border: 0; width:125px">
-            <img src="media/Storage-Spaces-Direct-in-Windows-Server-2016/manage.png" width="125" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
+        <td style="padding: 5px; border: 0;">
             <strong><a href="manage-storage-spaces-direct.md">Manage</a></strong>
             <ul>
 			  <li><a href="add-nodes.md">Add servers or drives</a></li>
@@ -189,12 +180,9 @@ Try Storage Spaces Direct [in Microsoft Azure](https://blogs.technet.microsoft.c
 
 ## See also
 
--   [Storage Spaces Direct throughput with iWARP](https://blogs.technet.microsoft.com/filecab/2017/03/13/storage-spaces-direct-throughput-with-iwarp) (TechNet blog)
 -   [Fault tolerance and storage efficiency](storage-spaces-fault-tolerance.md)
+-   [Storage Replica](../storage-replica/storage-replica-overview.md)
+-   [Storage Spaces Direct throughput with iWARP](https://blogs.technet.microsoft.com/filecab/2017/03/13/storage-spaces-direct-throughput-with-iwarp) (TechNet blog)
 -   [What's New in Failover Clustering in Windows Server](../../failover-clustering/whats-new-in-failover-clustering.md)  
--   [Storage Replica in Windows Server 2016](../storage-replica/storage-replica-overview.md)  
 -   [Storage Quality of Service](../storage-qos/storage-qos-overview.md)
-- [Storage Spaces in Windows Server 2012 R2](https://technet.microsoft.com/library/hh831739%28v=ws.11%29.aspx) (with shared SAS storage enclosures)
-- [Windows IT Pro Support](https://www.microsoft.com/itpro/windows/support)
-
-Not finding content you need? Windows 10 users, tell us what you want on [Feedback Hub](feedback-hub://?referrer=techDocsUcPage&tabid=2&contextid=898&newFeedback=true&topic=storage-spaces-direct-overview.md). 
+-   [Windows IT Pro Support](https://www.microsoft.com/itpro/windows/support)

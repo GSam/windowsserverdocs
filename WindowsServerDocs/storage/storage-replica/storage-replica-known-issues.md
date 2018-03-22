@@ -366,7 +366,7 @@ When using Storage Spaces Direct with HDDs, you cannot disable or avoid the cach
 
 This workaround is of course not ideal and some customers may not be able to make use of it. The Storage Replica team is working on optimizations and an updated log mechanism for the future to reduce these artifical bottlenecks. There is no ETA for this, but when available to TAP customers for testing, this FAQ will be updated. 
 
-## Error when running Test-SRTopology between two clusters
+## Error "Could not find file" when running Test-SRTopology between two clusters
 
 When running Test-SRTopology between two clusters and their CSV paths, it fails with error: 
 
@@ -393,7 +393,49 @@ When running Test-SRTopology between two clusters and their CSV paths, it fails 
 
 This is caused by a known code defect in Windows Server 2016. This issue was first fixed in Windows Server, version 1709 and the associated RSAT tools. For a downlevel resolution, please contact Microsoft Support and request a backport update. There is no workaround.
 
-## See also  
+## Error "specified volume could not be found" when running Test-SRTopology between two clusters
+
+When running Test-SRTopology between two clusters and their CSV paths, it fails with error: 
+
+    PS C:\> Test-SRTopology -SourceComputerName RRN44-14-09 -SourceVolumeName C:\ClusterStorage\Volume1 -SourceLogVolumeName L: -DestinationComputerName RRN44-14-13 -DestinationVolumeName C:\ClusterStorage\Volume1 -DestinationLogVolumeName L: -DurationInMinutes 30 -ResultPath c:\report
+
+    Test-SRTopology : The specified volume C:\ClusterStorage\Volume1 cannot be found on computer RRN44-14-09. If this is a cluster node, the volume must be part of a role or CSV; volumes in Available Storage are not accessible
+    At line:1 char:1
+    + Test-SRTopology -SourceComputerName RRN44-14-09 -SourceVolumeName C:\ ...
+    + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        + CategoryInfo          : ObjectNotFound: (:) [Test-SRTopology], Exception
+        + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand
+
+When specifying the source node CSV as the source volume, you must select the node that owns the CSV. You can either move the CSV to the specified node or change the node name you specified in `-SourceComputerName`. This error will receive an improved message in the next version of Windows Server. 
+
+## Unable to access Data Drive in Storage Replica after unexpected reboot when Bitlocker enabled
+
+If Bitlocker is enabled on both drives (Log Drive and Data Drive) and in both Storage replica drives, if the Primary Server reboots then you are unable to access the Primary Drive even after unlocking the Log Drive from Bitlocker.
+
+This is an expected behavior. To recover the data or access the drive, you need to unlock the log drive first and then open Diskmgmt.msc to locate the data drive. Turn the data drive offline and online again. Locate the Bitlocker icon on the drive and unlock the drive.
+
+## Issue unlocking the Data drive on secondary server after breaking the Storage Replica partnership
+
+After Disabling the SR Partnership and removing the Storage Replica, it is expected if you are unable to unlock the Secondary Server’s Data drive with its respective password or key. 
+
+You need to use Key or Password of Primary Server’s Data drive to unlock the Secondary Server’s data drive.
+
+## Test Failover does mount when using asynchronous replication
+
+When running Mount-SRDestination to bring a destination volume online as part of the Test Failover feature, it fails with error:
+
+    Mount-SRDestination: Unable to mount SR group <TEST>, detailed reason: The group or resource is not in the correct state to perform the supported operation.
+    At line:1 char:1
+    + Mount-SRDestination -ComputerName SRV1 -Name TEST -TemporaryP . . .
+    + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        + CategoryInfo          : NotSpecified: (MSFT WvrAdminTasks : root/Microsoft/...(MSFT WvrAdminTasks : root/Microsoft/. T_WvrAdminTasks) (Mount-SRDestination], CimException
+        + FullyQua1ifiedErrorId : Windows System Error 5823, Mount-SRDestination.  
+
+If using a synchronous partnership type, test failover works normally.    
+
+This is caused by a known code defect in Windows Server, version 1709. It has been resolved in the next Semi-annual Channel Release of Windows Server. Please contact Microsoft Support to request a backport to Windows Server, version 1709 or wait for the next Windows Server release. 
+
+## See also  
 - [Storage Replica](storage-replica-overview.md)  
 - [Stretch Cluster Replication Using Shared Storage](stretch-cluster-replication-using-shared-storage.md)  
 - [Server to Server Storage Replication](server-to-server-storage-replication.md)  

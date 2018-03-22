@@ -56,7 +56,7 @@ For more information about containers, see [Container Networking Overview](https
 
 **Server Core as a container** (and infrastructure) host, provides better flexibility, density and performance for existing applications under a modernization process and brands new apps developed already using the cloud model.
 
-**VM Load Balancing** is also improved with OS and Application awareness, ensuring optimal load balancing and application performance.
+**VM Start Ordering** is also improved with OS and Application awareness, bringing enhanced triggers for when a VM is considered started before starting the next.
 
 **Storage-class memory support for VMs** enables NTFS-formatted direct access volumes to be created on non-volatile DIMMs and exposed to Hyper-V VMs. This enables Hyper-V VMs to leverage the low-latency performance benefits of storage-class memory devices.
 
@@ -147,5 +147,3 @@ For more information, see [Guarded fabric and shielded VMs overview](https://doc
 - **Management of Remote Computers and Devices**.  You can manage Windows 10 VPN clients by configuring the Device Tunnel (prelogon) feature in the VPN profile. In addition, you must configure the VPN connection to dynamically register the IP addresses that are assigned to the VPN interface with internal DNS services.
 - **Specify Pre-Logon Gateways**. You can specify Pre-Logon Gateways with the Device Tunnel (prelogon) feature in the VPN profile, combined with traffic filters to control which management systems on the corporate network are accessible via the device tunnel.
 
-
-Not finding content you need? Windows 10 users, tell us what you want on [Feedback Hub](feedback-hub:?tabid=2&contextid=898). 
